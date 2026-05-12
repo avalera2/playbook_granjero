@@ -1,0 +1,6 @@
+---
+- name: Playbook del Granjero
+  hosts: centos
+  become: yes
+  roles:
+    - role: rol_granja
