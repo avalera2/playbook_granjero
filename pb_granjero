@@ -1,0 +1,10 @@
+---
+- name: Playbook del Granjero
+  hosts: centos
+  become: true
+
+  vars:
+    action: "{{ action | default('sembrar') }}"
+
+  roles:
+    - rol_granja
