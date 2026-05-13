@@ -1,0 +1,10 @@
+
+---
+- name: Validar acción
+  ansible.builtin.assert:
+    that:
+      - action in ['cosechar', 'sembrar']
+    fail_msg: "Acción no reconocida. Usa 'cosechar' o 'sembrar'."
+
+- name: Ejecutar la tarea solicitada
+  ansible.builtin.include_tasks: "tk_{{ action }}.yml"
